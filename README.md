@@ -1,5 +1,15 @@
 # MPNet
 
+[MPNet](https://) (Masked and Permuted Pre-training for Language Understanding, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet, and combines the best of both worlds of MLM and PLM. 
+
+
+## Supported Features
+* A unified view and implementation of several pre-training models including BERT, XLNet, MPNet, etc.
+* Code for pre-training and fine-tuning for a variety of language understanding (GLUE, SQuAD, RACE, etc) tasks.
+
+
+## Installation
+
 We implement MPNet and this pre-training toolkit based on the codebase of [fairseq](https://github.com/pytorch/fairseq). The installation is as follow:
 
 ```
@@ -83,17 +93,18 @@ We provide a pre-trained [MPNet model](https://modelrelease.blob.core.windows.ne
 - [Fine-tuning on SQuAD](README.squad.md)
 
 
+## Acknowledgements
+Our code is based on [fairseq-0.8.0](https://github.com/pytorch/fairseq). Thanks for their contribution to the open-source commuity.
 
-# Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## Reference
+If you find this toolkit useful in your work, you can cite the corresponding papers listed below:
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+    @article{song2020mpnet,
+        title={MPNet: Masked and Permuted Pre-training for Language Understanding},
+        author={Song, Kaitao and Tan, Xu and Qin, Tao and Lu, Jianfeng and Liu, Tie-Yan},
+        journal={arXiv preprint arXiv:2004.xxxxx},
+        year={2020}
+    }
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct)
