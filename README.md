@@ -61,7 +61,6 @@ MAX_SENTENCES=16        # Number of sequences per batch (batch size)
 UPDATE_FREQ=16          # Increase the batch size 16x
 
 DATA_DIR=data-bin/wikitext-103
-wget -c https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt
 
 fairseq-train --fp16 $DATA_DIR \
     --task masked_permutation_lm --criterion masked_permutation_cross_entropy \
@@ -70,7 +69,7 @@ fairseq-train --fp16 $DATA_DIR \
     --lr-scheduler polynomial_decay --lr $PEAK_LR --warmup-updates $WARMUP_UPDATES --total-num-update $TOTAL_UPDATES \
     --dropout 0.1 --attention-dropout 0.1 --weight-decay 0.01 \
     --max-sentences $MAX_SENTENCES --update-freq $UPDATE_FREQ \
-    --mask-whole-words --bpe bert --bpe-vocab-file bert-base-uncased-vocab.txt \
+    --mask-whole-words --bpe bert \
     --max-update $TOTAL_UPDATES --log-format simple --log-interval 1 --input-mode 'mpnet'
 ```
 **Notes**: You can replace arch with `mpnet_base` and remove `--mask-whole-words --bpe bert --bpe-vocab-file bert-base-uncased-vocab.txt` to disable relative position embedding and whole word mask. 
