@@ -19,7 +19,7 @@ pip install pytorch_transformers==1.0.0 transformers scipy sklearn
 
 
 ## Pre-training MPNet
-Our model is pre-trained with bert dictionary, you first need to `pip install transformers` to use bert tokenizer. We provide a script `encode.py` and a dictionary file `dict.txt` to tokenize your corpus. You can modify `encode.py` if you want to use other tokenizers (like roberta).
+Our model is pre-trained with bert dictionary, you first need to `pip install transformers` to use bert tokenizer. We provide a script [`encode.py`](MPNet/encode.py) and a dictionary file [`dict.txt`](MPNet/dict.txt) to tokenize your corpus. You can modify `encode.py` if you want to use other tokenizers (like roberta).
 
 ### 1) Preprocess data 
 We choose [WikiText-103](https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-103-raw-v1.zip) as a demo. The running script is as follow:
@@ -29,7 +29,7 @@ wget https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-103-raw-v1.
 unzip wikitext-103-raw-v1.zip
 
 for SPLIT in train valid test; do \
-    python encode.py \
+    python MPNet/encode.py \
         --inputs wikitext-103-raw/wiki.${SPLIT}.raw \
         --outputs wikitext-103-raw/wiki.${SPLIT}.bpe \
         --keep-empty \
@@ -41,7 +41,7 @@ Then, we need to binarize data. The command of binarizing data is following:
 ```
 fairseq-preprocess \
     --only-source \
-    --srcdict dict.txt \
+    --srcdict MPNet/dict.txt \
     --trainpref wikitext-103-raw/wiki.train.bpe \
     --validpref wikitext-103-raw/wiki.valid.bpe \
     --testpref wikitext-103-raw/wiki.test.bpe \
@@ -89,8 +89,8 @@ assert isinstance(mpnet.model, torch.nn.Module)
 
 We provide a pre-trained [MPNet model](https://modelrelease.blob.core.windows.net/pre-training/MPNet/mpnet.example.pt) in BERT-base setting for you to have a try (which is only pre-trained for 125K steps). We will provide the final model with 500K training steps once the pre-training is finished.
 
-- [Fine-tuning on GLUE](README.glue.md)
-- [Fine-tuning on SQuAD](README.squad.md)
+- [Fine-tuning on GLUE](MPNet/README.glue.md)
+- [Fine-tuning on SQuAD](MPNet/README.squad.md)
 
 
 ## Acknowledgements
