@@ -50,7 +50,7 @@ fairseq-preprocess \
 ```
 
 ### 2) Pre-train MPNet
-The below command is to train a MPNet model with relative positional embedding and whole word mask:
+The below command is to train a MPNet model:
 ```
 TOTAL_UPDATES=125000    # Total number of training steps
 WARMUP_UPDATES=10000    # Warmup the learning rate over this many updates
@@ -64,15 +64,14 @@ DATA_DIR=data-bin/wikitext-103
 
 fairseq-train --fp16 $DATA_DIR \
     --task masked_permutation_lm --criterion masked_permutation_cross_entropy \
-    --arch mpnet_rel_base --sample-break-mode complete --tokens-per-sample $TOKENS_PER_SAMPLE \
+    --arch mpnet_base --sample-break-mode complete --tokens-per-sample $TOKENS_PER_SAMPLE \
     --optimizer adam --adam-betas '(0.9,0.98)' --adam-eps 1e-6 --clip-norm 0.0 \
     --lr-scheduler polynomial_decay --lr $PEAK_LR --warmup-updates $WARMUP_UPDATES --total-num-update $TOTAL_UPDATES \
     --dropout 0.1 --attention-dropout 0.1 --weight-decay 0.01 \
     --max-sentences $MAX_SENTENCES --update-freq $UPDATE_FREQ \
-    --mask-whole-words --bpe bert \
     --max-update $TOTAL_UPDATES --log-format simple --log-interval 1 --input-mode 'mpnet'
 ```
-**Notes**: You can replace arch with `mpnet_base` and remove `--mask-whole-words --bpe bert --bpe-vocab-file bert-base-uncased-vocab.txt` to disable relative position embedding and whole word mask. 
+**Notes**: You can replace arch with `mpnet_rel_base` and add command `--mask-whole-words --bpe bert` to use relative position embedding and whole word mask. 
 
 **Notes**: You can specify `--input-mode` as `mlm` or `plm` to train **masked language model** or **permutation language model**.
 
