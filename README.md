@@ -77,7 +77,11 @@ fairseq-train --fp16 $DATA_DIR \
 
 **Notes**: You can specify `--input-mode` as `mlm` or `plm` to train **masked language model** or **permutation language model**.
 
-### 3) Load the pre-trained model
+
+## Pre-trained models
+We provide a pre-trained [MPNet model](https://modelrelease.blob.core.windows.net/pre-training/MPNet/mpnet.example.pt) in BERT-base setting for you to have a try (which is only pre-trained for 125K steps). We will provide the final model with 500K training steps once the pre-training is finished.
+
+You can load the pre-trained MPNet model like this: 
 ```python
 from fairseq.models.masked_permutation_net import MPNet
 mpnet = MPNet.from_pretrained('checkpoints', 'checkpoint_best.pt', 'path/to/data', bpe='bert')
@@ -86,8 +90,6 @@ assert isinstance(mpnet.model, torch.nn.Module)
 
 
 ## Fine-tuning MPNet on down-streaming tasks
-
-We provide a pre-trained [MPNet model](https://modelrelease.blob.core.windows.net/pre-training/MPNet/mpnet.example.pt) in BERT-base setting for you to have a try (which is only pre-trained for 125K steps). We will provide the final model with 500K training steps once the pre-training is finished.
 
 - [Fine-tuning on GLUE](MPNet/README.glue.md)
 - [Fine-tuning on SQuAD](MPNet/README.squad.md)
@@ -107,4 +109,7 @@ If you find this toolkit useful in your work, you can cite the corresponding pap
         year={2020}
     }
 
-[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct)
+## Related Works
+* [MASS](https://github.com/microsoft/MASS): Masked Sequence to Sequence Pre-training for Language Generation, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu
+
+* [LightPAFF](https://lightpaff): A Two-Stage Distillation Framework for Pre-training and Fine-tuning, by Kaitao Song, Hao Sun, Xu Tan, Tao Qin, Jianfeng Lu, Hongzhi Liu, Tie-Yan Liu
