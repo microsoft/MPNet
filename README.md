@@ -1,6 +1,6 @@
 # MPNet
 
-[MPNet](https://) (Masked and Permuted Pre-training for Language Understanding, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet, and combines the best of both worlds of MLM and PLM. 
+[MPNet](https://arxiv.org/pdf/2004.09297.pdf) (Masked and Permuted Pre-training for Language Understanding, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet, and combines the best of both worlds of MLM and PLM. 
 
 
 ## Supported Features
@@ -103,11 +103,11 @@ If you find this toolkit useful in your work, you can cite the corresponding pap
     @article{song2020mpnet,
         title={MPNet: Masked and Permuted Pre-training for Language Understanding},
         author={Song, Kaitao and Tan, Xu and Qin, Tao and Lu, Jianfeng and Liu, Tie-Yan},
-        journal={arXiv preprint arXiv:2004.xxxxx},
+        journal={arXiv preprint arXiv:2004.09297},
         year={2020}
     }
 
 ## Related Works
 * [MASS](https://github.com/microsoft/MASS): Masked Sequence to Sequence Pre-training for Language Generation, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu
 
-* [LightPAFF](https://lightpaff): A Two-Stage Distillation Framework for Pre-training and Fine-tuning, by Kaitao Song, Hao Sun, Xu Tan, Tao Qin, Jianfeng Lu, Hongzhi Liu, Tie-Yan Liu
+* LightPAFF: A Two-Stage Distillation Framework for Pre-training and Fine-tuning, by Kaitao Song, Hao Sun, Xu Tan, Tao Qin, Jianfeng Lu, Hongzhi Liu, Tie-Yan Liu
