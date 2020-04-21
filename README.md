@@ -1,6 +1,6 @@
 # MPNet
 
-[MPNet](https://arxiv.org/pdf/2004.09297.pdf) (Masked and Permuted Pre-training for Language Understanding, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet, and combines the best of both worlds of MLM and PLM. 
+[MPNet: Masked and Permuted Pre-training for Language Understanding](https://arxiv.org/pdf/2004.09297.pdf), by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet, and combines the best of both worlds of MLM and PLM. 
 
 
 ## Supported Features
@@ -108,6 +108,7 @@ If you find this toolkit useful in your work, you can cite the corresponding pap
     }
 
 ## Related Works
-* [MASS](https://github.com/microsoft/MASS): Masked Sequence to Sequence Pre-training for Language Generation, by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu
+* [MASS: Masked Sequence to Sequence Pre-training for Language Generation](https://arxiv.org/pdf/1905.02450.pdf), by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu. GitHub: https://github.com/microsoft/MASS
+
 
 * LightPAFF: A Two-Stage Distillation Framework for Pre-training and Fine-tuning, by Kaitao Song, Hao Sun, Xu Tan, Tao Qin, Jianfeng Lu, Hongzhi Liu, Tie-Yan Liu
