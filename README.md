@@ -1,6 +1,6 @@
 # MPNet
 
-[MPNet: Masked and Permuted Pre-training for Language Understanding](https://arxiv.org/pdf/2004.09297.pdf), by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet, and combines the best of both worlds of MLM and PLM. 
+[MPNet: Masked and Permuted Pre-training for Language Understanding](https://arxiv.org/pdf/2004.09297.pdf), by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet and achieves better accuracy. 
 
 
 ## Supported Features
