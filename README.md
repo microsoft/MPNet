@@ -2,6 +2,7 @@
 
 [MPNet: Masked and Permuted Pre-training for Language Understanding](https://arxiv.org/pdf/2004.09297.pdf), is a novel pre-training method for language understanding tasks. It solves the problems of MLM (masked language modeling) in BERT and PLM (permuted language modeling) in XLNet and achieves better accuracy. 
 
+**News**: *We have updated the pre-trained models now*.
 
 ## Supported Features
 * A unified view and implementation of several pre-training models including BERT, XLNet, MPNet, etc.
@@ -77,7 +78,7 @@ fairseq-train --fp16 $DATA_DIR \
 
 
 ## Pre-trained models
-We provide a pre-trained [MPNet model](https://modelrelease.blob.core.windows.net/pre-training/MPNet/mpnet.example.pt) in BERT-base setting for you to have a try (which is only pre-trained for 125K steps). We will provide the final model with 500K training steps once the pre-training is finished.
+We have updated the final pre-trained [MPNet model](https://modelrelease.blob.core.windows.net/pre-training/MPNet/mpnet.base.tar.gz) for fine-tuning.
 
 You can load the pre-trained MPNet model like this: 
 ```python
