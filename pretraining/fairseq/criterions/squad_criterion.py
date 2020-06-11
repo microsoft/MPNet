@@ -25,10 +25,6 @@ class SQuADCriterion(FairseqCriterion):
             classification_head_name='question_answer_head',
         )
 
-        import IPython
-        IPython.embed()
-        exit()
-
         start_logits, end_logits = logits.split(1, dim=-1)
         start_logits = start_logits.squeeze(-1)
         end_logits = end_logits.squeeze(-1)
